@@ -26,7 +26,7 @@ class AdminWithRedux extends React.Component {
             footer: true,
             headingProps: {
                 heading: 'Admin',
-                icon: 'search',
+                icon: 'admin_panel_settings',
                 sticky: true,
                 gradient: true,
                 offsetTop: 30,
