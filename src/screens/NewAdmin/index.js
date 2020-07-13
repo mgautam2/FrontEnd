@@ -16,7 +16,7 @@ class AdminWithRedux extends React.Component {
 
     componentDidMount() {
         setup.setupAdminPage();
-        links.title('New Admin');
+        links.title('Admin');
     }
 
     render() {

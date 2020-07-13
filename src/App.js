@@ -49,8 +49,7 @@ class App extends React.Component {
           <Route exact path={user.callbackPaths} component={SetupUser} />
 
           {/* Admin */}
-          {user.isAdmin && <Route path="/admin" component={Admin} />}
-          {user.isAdmin && <Route path="/new-admin" component={NewAdmin} />}
+          {user.isAdmin && <Route path="/admin" component={NewAdmin} />}
 
           {/* Instructor */}
           <Route exact path="/instructor" render={() => <Redirect to="/instructor/my-courses" />} />
