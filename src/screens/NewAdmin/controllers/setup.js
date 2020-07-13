@@ -12,7 +12,10 @@ class SetupAdminPage extends StateController {
     setOfferings(offerings) {
         this.setState('setOfferings', 'offerings', offerings);
     }
-
+    universities = []
+    setUniversities(universities) {
+        this.setState('setUniversities', 'universities', universities);
+    }
     async setupAdminPage() {
         let { data } = await api.getOfferingsByStudent();
         this.setOfferings(data);
