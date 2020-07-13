@@ -35,7 +35,7 @@ class AdminWithRedux extends React.Component {
     
         return (
           <CTLayout {...layoutProps}>
-            Here is new admin page
+            <div>Here is new admin page</div>
           </CTLayout>
         );
     }
