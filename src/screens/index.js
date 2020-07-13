@@ -2,6 +2,8 @@ export { SetupUser } from './SetupUser';
 
 export { Admin } from './Admin';
 
+export { NewAdmin } from './NewAdmin';
+
 export {
   MyCourses,
   NewCourse,

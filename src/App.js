@@ -5,6 +5,7 @@ import AppInsightsProvider from './azure-app-insights';
 import {
   // Admin
   Admin,
+  NewAdmin,
   // Instructor
   MyCourses,
   NewCourse,
@@ -49,6 +50,7 @@ class App extends React.Component {
 
           {/* Admin */}
           {user.isAdmin && <Route path="/admin" component={Admin} />}
+          {user.isAdmin && <Route path="/new-admin" component={NewAdmin} />}
 
           {/* Instructor */}
           <Route exact path="/instructor" render={() => <Redirect to="/instructor/my-courses" />} />

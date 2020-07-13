@@ -3,7 +3,9 @@ import { withReduxProvider } from 'redux/redux-provider';
 import { CTLayout } from 'layout';
 import { links } from 'utils';
 import {
-    setup
+    setup,
+    adminStore,
+    connectWithRedux
 } from './controllers';
 
 class AdminWithRedux extends React.Component {
@@ -14,6 +16,35 @@ class AdminWithRedux extends React.Component {
 
     componentDidMount() {
         setup.setupAdminPage();
-        links.title('Admin');
+        links.title('New Admin');
+    }
+
+    render() {
+        const layoutProps = CTLayout.createProps({
+            transition: true,
+            responsive: true,
+            footer: true,
+            headingProps: {
+                heading: 'Admin',
+                icon: 'search',
+                sticky: true,
+                gradient: true,
+                offsetTop: 30,
+            },
+        });
+    
+        return (
+          <CTLayout {...layoutProps}>
+            Here is new admin page
+          </CTLayout>
+        );
     }
 }
+
+export const NewAdmin = withReduxProvider(
+    AdminWithRedux,
+    adminStore,
+    connectWithRedux,
+    [],
+    ['all'],
+  );
