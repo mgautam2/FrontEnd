@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import classNames from 'classnames';
-
+import cx from 'classnames';
+import { altEl, makeEl } from '../tools';
 import CTScrollArea from '../CTScrollArea';
 import CTNavHeader from '../CTNavHeader';
 import CTNavSidebar from '../CTNavSidebar';
@@ -40,7 +40,8 @@ function CTLayout(props) {
     headingProps,
   } = props;
 
-  let { float = false, mini = false } = sidebarProps;
+  const { float = false, mini = false } = sidebarProps;
+  const { tabs } = headerProps;
 
   let defaultSidebar = getDefaultSidebarType(responsive, defaultOpenSidebar, { float, mini });
   const [sidebar, setSidebar] = useState(defaultSidebar);
@@ -79,11 +80,12 @@ function CTLayout(props) {
   };
 
   // Classes
-  const containerClasses = classNames(className);
-  const mainClasses = classNames(
+  const containerClasses = cx(className);
+  const mainClasses = cx(
     'ct-layout-main', 
     { 
       fill,
+      'tab-header': Array.isArray(tabs) && tabs.length > 0,
       transition,
       'padded-240': isNormal,
       'padded-50': isMini,
@@ -96,23 +98,23 @@ function CTLayout(props) {
     showSidebar: isOpen,
     onSidebarTriggerClick: handleOpenSidebar,
   };
-  const sidebarBrandElem = <NavSidebarTrigger {...brandElemProps} />;
+  const sidebarBrandElem = makeEl(NavSidebarTrigger, brandElemProps);
 
   brandElemProps.withTrigger = !isMini;
   brandElemProps.logo = logoBrand;
-  const headerBrandElem = isNormal 
-                        ? <div /> 
-                        : <NavSidebarTrigger {...brandElemProps} />;
+  const headerBrandElem = altEl(NavSidebarTrigger, !isNormal, brandElemProps, <div />);
 
-  const headingElement = headingProps
-                        ? <CTHeading gradient highlightIcon {...headingProps} />
-                        : null;
+  const headingElement = altEl(CTHeading, Boolean(headingProps), {
+    gradient: true,
+    highlightIcon: true,
+    ...headingProps
+  });
+
   // Page Element
-  const pageElement = fill 
-                    ? <div className="ct-layout-fill">{children}</div>
-                    : children;
+  const pageElement = altEl(
+    children, !fill, null, <div className="ct-layout-fill">{children}</div>);
   
-  const footerElement = footer ? <CTFooter /> : null;
+  const footerElement = altEl(CTFooter, footer);
 
   return (
     <div id="ct-layout-container" className={containerClasses}>
@@ -128,6 +130,7 @@ function CTLayout(props) {
       />
 
       <CTScrollArea 
+        id="ct-layout-scroll"
         role={role}
         scrollToTopButton="bottom right"
         scrollClassName={mainClasses}
