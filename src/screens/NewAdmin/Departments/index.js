@@ -3,17 +3,17 @@ import { CTFragment } from 'layout';
 import { connectWithRedux } from '../controllers';
 import './index.scss';
 
-function UniversitiesWithRedux() {
+function DepartmentsWithRedux() {
   return (
     <CTFragment padding={[0, 30]}>
       <div>
-        Here is Universities page
+        Here is Departments page
       </div>
     </CTFragment>
   );
 }
 
-export const Universities = connectWithRedux(
-    UniversitiesWithRedux,
+export const Departments = connectWithRedux(
+    DepartmentsWithRedux,
     []
 );

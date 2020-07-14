@@ -1,12 +1,18 @@
 import React from 'react';
 import { withReduxProvider } from 'redux/redux-provider';
-import { CTLayout } from 'layout';
+import { CTLayout, CTFragment } from 'layout';
 import { links } from 'utils';
+import { Route, Redirect } from 'react-router-dom';
 import {
     setup,
     adminStore,
     connectWithRedux
 } from './controllers';
+import { Universities } from './Universities';
+import { Terms } from './Terms';
+import { Departments } from './Departments';
+import { Instructors } from './Instructors';
+import { LoginAsUser } from './LoginAsUser';
 
 class AdminWithRedux extends React.Component {
     constructor(props) {
@@ -24,18 +30,26 @@ class AdminWithRedux extends React.Component {
             transition: true,
             responsive: true,
             footer: true,
+            defaultOpenSidebar: true,
             headingProps: {
-                heading: 'Admin',
-                icon: 'admin_panel_settings',
-                sticky: true,
-                gradient: true,
-                offsetTop: 30,
+                subtitle: 'Admin',
             },
         });
     
         return (
           <CTLayout {...layoutProps}>
             <div>Here is new admin page</div>
+            {/* <div>
+                <Route exact path="/" component={Home} />
+            </div> */}
+            <CTFragment>
+              <Route exact path="/admin" render={() => <Redirect to="/admin/universities" />} />
+              <Route exact path="/admin/universities" component={Universities} />
+              <Route exact path="/admin/terms" component={Terms} />
+              <Route exact path="/admin/departments" component={Departments} />
+              <Route exact path="/admin/instructors" component={Instructors} />
+              <Route exact path="/admin/login-as-user" component={LoginAsUser} />
+            </CTFragment>
           </CTLayout>
         );
     }
@@ -47,4 +61,4 @@ export const NewAdmin = withReduxProvider(
     connectWithRedux,
     [],
     ['all'],
-  );
+);
