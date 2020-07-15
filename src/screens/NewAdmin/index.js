@@ -40,7 +40,6 @@ class AdminWithRedux extends React.Component {
     
         return (
           <CTLayout {...layoutProps}>
-            <div>Here is new admin page</div>
             <CTFragment>
               <Route exact path="/admin" render={() => <Redirect to="/admin/universities" />} />
               <Route exact path="/admin/universities" component={Universities} />
