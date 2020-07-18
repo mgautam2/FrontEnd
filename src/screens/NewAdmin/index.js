@@ -33,7 +33,7 @@ class AdminWithRedux extends React.Component {
             responsive: true,
             footer: true,
             defaultOpenSidebar: true,
-            headingProps: {
+            headerProps: {
                 subtitle: 'Admin',
             },
         });
