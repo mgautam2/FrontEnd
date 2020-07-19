@@ -33,15 +33,15 @@ function UniversitiesWithRedux() {
 
       <CTFragment padding={[0, 30]}>
 
-        <Divider />
+        {/* <Divider />
 
         <div className='create-new-button'>
           <SingleButton text='Create New University' />
         </div>
         
-        <Divider horizontal>All Universities</Divider>
+        <Divider horizontal>All Universities</Divider> */}
         
-        <UniversityList universities={universities} />
+        <UniversityList universities={universities} setUniversities={setUniversities} />
 
       </CTFragment>
     </CTFragment>
