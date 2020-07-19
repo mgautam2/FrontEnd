@@ -1,3 +1,6 @@
 export const initialState = {
-    offerings: []
+    offerings: [],
+    universities: [],
+    terms: []
+
 };

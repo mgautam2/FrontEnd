@@ -3,22 +3,29 @@ import { StateController } from 'utils/state-controller'
 
 class SetupAdminPage extends StateController {
     init(props) {
-        const { setOfferings } = props;
+        const { setUniversities, setTerms } = props;
 
-        this.register({ setOfferings });
+        this.register({setUniversities, setTerms});
     }
-
-    offerings = []
-    setOfferings(offerings) {
-        this.setState('setOfferings', 'offerings', offerings);
+    async getUniversities() {
+        try {
+            const { data } = await api.getUniversities();
+            return data;
+        } catch (error) {
+            return [];
+        }    
     }
     universities = []
     setUniversities(universities) {
         this.setState('setUniversities', 'universities', universities);
     }
+    terms = []
+    setTerms(terms) {
+        this.setState('setTerms', 'terms', terms);
+    }
     async setupAdminPage() {
-        let { data } = await api.getOfferingsByStudent();
-        this.setOfferings(data);
+        let data = this.getUniversities();
+        this.setUniversities(data);
         api.contentLoaded();
     }
 }
