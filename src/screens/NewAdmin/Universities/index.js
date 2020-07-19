@@ -10,7 +10,7 @@ import './index.scss';
 function UniversitiesWithRedux() {
   const [universities, setUniversities] = useState([]);
 
-  useEffect(() => {
+  const getUniversities = async() => {
     api.getUniversities().then(({ data }) => {
       setUniversities(data);
       /**
@@ -18,6 +18,10 @@ function UniversitiesWithRedux() {
        */
       api.contentLoaded();
     });
+  }
+
+  useEffect(() => {
+    getUniversities();
   },[]);
 
   const headingProps = CTHeading.createProps({
