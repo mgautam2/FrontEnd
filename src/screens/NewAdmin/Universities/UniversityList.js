@@ -178,28 +178,10 @@ function UniversityList(props) {
             sorting: true,
             exportButton: true,
             actionsColumnIndex: -1
-        }}
-        // localization={{
-        //     pagination: {
-        //       labelDisplayedRows: 'string here',
-        //       labelRowsPerPage: 'another string here'
-        //     }
-        // }}
-        // components={{
-        //     Pagination: props => (
-        //         <TablePagination
-        //             {...props}
-        
-        //             // ******* These don't work anymore, because overwritten ********
-        //             labelRowsPerPage={<div style={{fontSize: 14}}>{props.labelRowsPerPage}</div>}
-        //             labelDisplayedRows={row => <div style={{fontSize: 14}}>{props.labelDisplayedRows(row)}</div>}
-        //             // ******* 
-        //         />
-        //     )
-        //   }}
+          }}
           title=""
           columns={univColumns}
-          data={universities}
+          data={universities.reverse()}
           editable={{
                 onRowAdd: (newData) =>
                     new Promise((resolve, reject) => {
