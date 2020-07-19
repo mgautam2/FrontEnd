@@ -10,15 +10,15 @@ import './index.scss';
 function UniversitiesWithRedux() {
   const [universities, setUniversities] = useState([]);
 
-  useEffect(() => {
-    api.getUniversities().then(({ data }) => {
-      setUniversities(data);
-      /**
-       * Hide the loading page
-       */
-      api.contentLoaded();
-    });
-  })
+  // useEffect(() => {
+  //   api.getUniversities().then(({ data }) => {
+  //     setUniversities(data);
+  //     /**
+  //      * Hide the loading page
+  //      */
+  //     api.contentLoaded();
+  //   },[]);
+  // })
 
   const headingProps = CTHeading.createProps({
     heading: 'Universities',
