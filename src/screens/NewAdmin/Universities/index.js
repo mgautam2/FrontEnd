@@ -8,6 +8,13 @@ import UniversityList from './UniversityList';
 import './index.scss';
 
 function UniversitiesWithRedux() {
+  const headingProps = CTHeading.createProps({
+    heading: 'Universities',
+    sticky: true,
+    gradient: true,
+    offsetTop: 30
+  });
+  
   const [universities, setUniversities] = useState([]);
 
   const getUniversities = async() => {
@@ -23,13 +30,6 @@ function UniversitiesWithRedux() {
   useEffect(() => {
     getUniversities();
   },[]);
-
-  const headingProps = CTHeading.createProps({
-    heading: 'Universities',
-    sticky: true,
-    gradient: true,
-    offsetTop: 30
-  });
 
   return (
     <CTFragment className='universities-container'>
