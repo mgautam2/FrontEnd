@@ -3,8 +3,7 @@ import { CTLayout, CTFragment, CTHeading } from 'layout';
 import { Divider } from 'semantic-ui-react';
 import { api } from 'utils';
 import { connectWithRedux } from '../controllers';
-import SingleButton from '../Components/SingleButton';
-import UniversityList from './UniversityList';
+import GeneralTable from '../Components/GeneralTable';
 import './index.scss';
 
 function UniversitiesWithRedux() {
@@ -31,6 +30,11 @@ function UniversitiesWithRedux() {
     getUniversities();
   },[]);
 
+  const univColumns = [
+    { title: 'Name', field: 'name' },
+    { title: 'Domain', field: 'domain' },
+  ];
+
   return (
     <CTFragment className='universities-container'>
       <CTHeading {...headingProps} />
@@ -44,8 +48,8 @@ function UniversitiesWithRedux() {
         </div>
         
         <Divider horizontal>All Universities</Divider> */}
-        
-        <UniversityList universities={universities} setUniversities={setUniversities} />
+
+        <GeneralTable value={universities} setValue={setUniversities} columnNames={univColumns} />
 
       </CTFragment>
     </CTFragment>

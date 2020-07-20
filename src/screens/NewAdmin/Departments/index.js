@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CTFragment, CTHeading } from 'layout';
 import { api } from 'utils';
 import { Divider , Dropdown } from 'semantic-ui-react';
+import GeneralTable from '../Components/GeneralTable';
 
 import { connectWithRedux } from '../controllers';
 import './index.scss';
@@ -41,10 +42,17 @@ function DepartmentsWithRedux() {
 
   useEffect(() => {
     getDepartsByUniId(currUniId);
-  },[])
+  },[currUniId])
 
   const universitiesOptions = universities.map((university) => 
   { return {key: university.id, value: university.name, text:university.name} });
+
+  const depColumns = [
+    { title: 'Name', field: 'name' },
+    { title: 'Acronym', field: 'acronym' },
+    { title: 'Id', field: 'id' },
+    { title: 'University Id', field: 'universityId' },
+  ];
 
   return (
     <CTFragment>
@@ -73,6 +81,7 @@ function DepartmentsWithRedux() {
         <CTFragment>
           Current University ID: {currUniId}
         </CTFragment>
+        <GeneralTable value={departments} setValue={setDepartments} columnNames={depColumns} />
       </CTFragment>
     </CTFragment>
   );
