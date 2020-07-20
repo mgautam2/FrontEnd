@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { CTFragment, CTHeading } from 'layout';
+import { CTFragment, CTHeading, CTAutoComplete } from 'layout';
 import { api } from 'utils';
-import { Divider , Dropdown } from 'semantic-ui-react';
 import GeneralTable from '../Components/GeneralTable';
 
 import { connectWithRedux } from '../controllers';
@@ -16,8 +15,7 @@ function DepartmentsWithRedux() {
   });
 
   const [universities, setUniversities] = useState([]);
-  const [currUni, setCurrUni] = useState("none");
-  const [currUniId, setCurrUniId] = useState("none");
+  const [currUniversity, setCurrUniversity] = useState("none");
   const [departments, setDepartments] = useState([]);
 
   const getUniversities = async() => {
@@ -41,46 +39,34 @@ function DepartmentsWithRedux() {
   },[]);
 
   useEffect(() => {
-    getDepartsByUniId(currUniId);
-  },[currUniId])
+    getDepartsByUniId(currUniversity);
+  },[currUniversity])
 
   const universitiesOptions = universities.map((university) => 
-  { return {key: university.id, value: university.name, text:university.name} });
+  { return { value: university.id, text:university.name} });
 
   const depColumns = [
     { title: 'Name', field: 'name' },
     { title: 'Acronym', field: 'acronym' },
-    { title: 'Id', field: 'id' },
-    { title: 'University Id', field: 'universityId' },
   ];
 
   return (
     <CTFragment>
       <CTHeading {...headingProps} />
       <CTFragment padding={[0, 30]}>
-        <Divider />
-        <CTFragment>
-          Select from Universities
-        </CTFragment>
-        <CTFragment>
-          Current University: {currUni}
-        </CTFragment>
-        <Dropdown
-          placeholder='Select University'
-          fluid
-          search
-          selection
+        <CTAutoComplete 
+          id="select-university"
+          label="Select University"
           options={universitiesOptions}
-          onChange={(e, data) => {
-            const { value } = data;
-            setCurrUni(value);
-            const { key } = data.options.find(o => o.value === value);
-            setCurrUniId(key);
+          value={currUniversity}
+          onChange={(value) => {
+            setCurrUniversity(value);
           }}
         />
-        <CTFragment>
-          Current University ID: {currUniId}
-        </CTFragment>
+        {/* <CTFragment>
+          Current University ID: {currUniversity}
+        </CTFragment> */}
+        
         <GeneralTable value={departments} setValue={setDepartments} columnNames={depColumns} />
       </CTFragment>
     </CTFragment>

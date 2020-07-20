@@ -38,19 +38,8 @@ function UniversitiesWithRedux() {
   return (
     <CTFragment className='universities-container'>
       <CTHeading {...headingProps} />
-
       <CTFragment padding={[0, 30]}>
-
-        {/* <Divider />
-
-        <div className='create-new-button'>
-          <SingleButton text='Create New University' />
-        </div>
-        
-        <Divider horizontal>All Universities</Divider> */}
-
         <GeneralTable value={universities} setValue={setUniversities} columnNames={univColumns} />
-
       </CTFragment>
     </CTFragment>
   );
