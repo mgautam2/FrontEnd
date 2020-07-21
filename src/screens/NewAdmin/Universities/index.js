@@ -1,10 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { CTLayout, CTFragment, CTHeading } from 'layout';
-import { Divider } from 'semantic-ui-react';
+import { CTFragment, CTHeading } from 'layout';
 import { api } from 'utils';
 import { connectWithRedux } from '../controllers';
 import GeneralTable from '../Components/GeneralTable';
-import './index.scss';
 
 function UniversitiesWithRedux() {
   const headingProps = CTHeading.createProps({
@@ -24,7 +22,7 @@ function UniversitiesWithRedux() {
        */
       api.contentLoaded();
     });
-  }
+  };
 
   useEffect(() => {
     getUniversities();
@@ -36,7 +34,7 @@ function UniversitiesWithRedux() {
   ];
 
   return (
-    <CTFragment className='universities-container'>
+    <CTFragment>
       <CTHeading {...headingProps} />
       <CTFragment padding={[0, 30]}>
         <GeneralTable value={universities} setValue={setUniversities} columnNames={univColumns} />

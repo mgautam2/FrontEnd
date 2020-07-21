@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { CTFragment, CTHeading, CTAutoComplete } from 'layout';
+import { CTFragment, CTHeading, CTAutoComplete, CTFormHelp, CTText } from 'layout';
 import { api } from 'utils';
+import _ from 'lodash';
 import GeneralTable from '../Components/GeneralTable';
 
 import { connectWithRedux } from '../controllers';
@@ -15,7 +16,7 @@ function DepartmentsWithRedux() {
   });
 
   const [universities, setUniversities] = useState([]);
-  const [currUniversity, setCurrUniversity] = useState("none");
+  const [currUniversity, setCurrUniversity] = useState([]);
   const [departments, setDepartments] = useState([]);
 
   const getUniversities = async() => {
@@ -39,8 +40,8 @@ function DepartmentsWithRedux() {
   },[]);
 
   useEffect(() => {
-    getDepartsByUniId(currUniversity);
-  },[currUniversity])
+    getDepartsByUniId(currUniversity.id);
+  },[currUniversity.id])
 
   const universitiesOptions = universities.map((university) => 
   { return { value: university.id, text:university.name} });
@@ -50,24 +51,40 @@ function DepartmentsWithRedux() {
     { title: 'Acronym', field: 'acronym' },
   ];
 
+  const handleChange = (value) => {
+    const temp = _.find(universities, ['id', value]);
+    setCurrUniversity(temp);
+  };
+
   return (
-    <CTFragment>
+    <CTFragment className='departments-container'>
       <CTHeading {...headingProps} />
       <CTFragment padding={[0, 30]}>
         <CTAutoComplete 
           id="select-university"
           label="Select University"
           options={universitiesOptions}
-          value={currUniversity}
-          onChange={(value) => {
-            setCurrUniversity(value);
-          }}
+          value={currUniversity.id}
+          onChange={handleChange}
         />
-        {/* <CTFragment>
-          Current University ID: {currUniversity}
-        </CTFragment> */}
-        
-        <GeneralTable value={departments} setValue={setDepartments} columnNames={depColumns} />
+
+        {currUniversity.length === 0 ? (
+          <CTFragment className='department-list'>
+            <CTFormHelp title="Please select a university">
+              <CTFragment>
+                You can create or view contents after selecting an university.
+              </CTFragment>
+            </CTFormHelp>
+          </CTFragment>
+          ) : (
+            <CTFragment className='department-list'>
+              <GeneralTable 
+                value={departments}
+                setValue={setDepartments}
+                columnNames={depColumns}
+              />
+            </CTFragment>
+          )}
       </CTFragment>
     </CTFragment>
   );

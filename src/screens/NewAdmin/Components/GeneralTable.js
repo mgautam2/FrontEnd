@@ -17,12 +17,12 @@ function GeneralTable(props) {
         }}
         title=""
         columns={columnNames}
-        data={value.reverse()}
+        data={value}
         editable={{
           onRowAdd: (newData) =>
             new Promise((resolve, reject) => {
               setTimeout(() => {
-                setValue([...value, newData]);
+                setValue([newData, ...value]);
                 resolve();
               }, 600);
             }),
