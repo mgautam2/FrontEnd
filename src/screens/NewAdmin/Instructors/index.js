@@ -88,6 +88,19 @@ function InstructorsWithRedux() {
       }
     },
     { title: 'Email', field: 'email' },
+    { title: 'University', 
+      field: 'id',
+      render: rowData => {
+        return (
+          <>
+            <Typography variant="body1">
+              {currUniversity.name}
+            </Typography>
+          </>
+        );
+      },
+      editable: false
+    },
   ];
 
   const handleChange = (value) => {

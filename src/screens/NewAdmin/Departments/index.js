@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CTFragment, CTHeading, CTAutoComplete, CTFormHelp, CTText } from 'layout';
 import { api } from 'utils';
 import _ from 'lodash';
+import { Typography } from "@material-ui/core";
 import GeneralTable from '../Components/GeneralTable';
 import { connectWithRedux } from '../controllers';
 import './index.scss';
@@ -48,6 +49,19 @@ function DepartmentsWithRedux() {
   const departmentColumns = [
     { title: 'Name', field: 'name' },
     { title: 'Acronym', field: 'acronym' },
+    { title: 'University', 
+      field: 'id',
+      render: rowData => {
+        return (
+          <>
+            <Typography variant="body1">
+              {currUniversity.name}
+            </Typography>
+          </>
+        );
+      },
+      editable: false
+    },
   ];
 
   const handleChange = (value) => {
