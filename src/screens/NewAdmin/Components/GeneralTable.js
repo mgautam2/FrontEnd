@@ -13,7 +13,8 @@ function GeneralTable(props) {
           pageSizeOptions: [5, 10, 50],
           sorting: true,
           exportButton: true,
-          actionsColumnIndex: -1
+          actionsColumnIndex: -1,
+          addRowPosition: 'first'
         }}
         title=""
         columns={columnNames}

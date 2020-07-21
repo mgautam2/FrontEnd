@@ -3,7 +3,6 @@ import { CTFragment, CTHeading, CTAutoComplete, CTFormHelp, CTText } from 'layou
 import { api } from 'utils';
 import _ from 'lodash';
 import GeneralTable from '../Components/GeneralTable';
-
 import { connectWithRedux } from '../controllers';
 import './index.scss';
 
@@ -46,7 +45,7 @@ function DepartmentsWithRedux() {
   const universitiesOptions = universities.map((university) => 
   { return { value: university.id, text:university.name} });
 
-  const depColumns = [
+  const departmentColumns = [
     { title: 'Name', field: 'name' },
     { title: 'Acronym', field: 'acronym' },
   ];
@@ -70,7 +69,7 @@ function DepartmentsWithRedux() {
 
         {currUniversity.length === 0 ? (
           <CTFragment className='department-list'>
-            <CTFormHelp title="Please select a university">
+            <CTFormHelp title="PLEASE SELECT A UNIVERSITY">
               <CTFragment>
                 You can create or view contents after selecting an university.
               </CTFragment>
@@ -81,7 +80,7 @@ function DepartmentsWithRedux() {
               <GeneralTable 
                 value={departments}
                 setValue={setDepartments}
-                columnNames={depColumns}
+                columnNames={departmentColumns}
               />
             </CTFragment>
           )}
