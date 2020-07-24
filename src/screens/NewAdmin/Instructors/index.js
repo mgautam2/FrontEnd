@@ -64,6 +64,7 @@ function InstructorsWithRedux() {
             <Grid item xs={12} sm={12} md={12} lg={6}>
               <TextField
                 id="firstName"
+                placeholder="First Name"
                 onChange={e =>
                   props.onRowDataChange({
                     ...props.rowData,
@@ -75,6 +76,7 @@ function InstructorsWithRedux() {
             <Grid item xs={12} sm={12} md={12} lg={6}>
               <TextField
                 id="lastName"
+                placeholder="Last Name"
                 onChange={e =>
                   props.onRowDataChange({
                     ...props.rowData,
