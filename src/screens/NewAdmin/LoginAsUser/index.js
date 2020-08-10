@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { CTFragment, CTHeading, CTForm, CTInput } from 'layout';
 import { user } from 'utils';
-import { Button } from 'pico-ui';
 import { connectWithRedux } from '../controllers';
 import './index.scss';
 
