@@ -24,7 +24,6 @@ function MoreWithRedux() {
   });
 
   const [focusedInput, setFocusedInput] = useState(null);
-  const [downloading, setDownloading] = useState(false);
   const [startDate, setStartDate] = useState(new Moment());
   const [endDate, setEndDate] = useState(null);
 
@@ -41,13 +40,11 @@ function MoreWithRedux() {
   };
 
   const onDownload = async () => {
-    setDownloading(true);
     const from = momentToISOString(startDate);
     const to = momentToISOString(endDate);
     const { data } = await api.adminGetLogs(from, to);
     let filename = `logs (${from.slice(0, 10)} to ${to.slice(0, 10)}).csv`;
     fileDownload(data, filename);
-    setDownloading(false);
     setEndDate(null);
     setStartDate(new Moment());
   };
