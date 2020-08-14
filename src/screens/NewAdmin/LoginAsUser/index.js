@@ -54,6 +54,7 @@ function LoginAsUserWithRedux() {
               placeholder="Email Address"
               value={emailAddress}
               onChange={handleEmailInput}
+              // onReturn={onSignIn}
             />
           </CTForm>
         )}
