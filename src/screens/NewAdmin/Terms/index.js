@@ -3,7 +3,6 @@ import { CTFragment, CTHeading, CTAutoComplete, CTFormHelp, CTText } from 'layou
 import { api } from 'utils';
 import _ from 'lodash';
 import { Typography, TextField, Grid } from "@material-ui/core";
-import { makeStyles } from '@material-ui/core/styles';
 import GeneralTable from '../Components/GeneralTable';
 import { connectWithRedux } from '../controllers';
 import './index.scss';
@@ -49,7 +48,6 @@ function TermsWithRedux() {
 
   const termColumns = [
     { title: 'Name', field: 'name' },
-    { title: 'Start Date', field: 'startDate' },
     { title: 'Start Date',
       field: 'startDate',
       render: rowData => {
@@ -72,19 +70,19 @@ function TermsWithRedux() {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                inputProps={{ max: props.rowData.endDate.substring(0, 10) }}
                 onChange={e =>
                   props.onRowDataChange({
                     ...props.rowData,
                     startDate: e.target.value
                   })}
-                value={props.rowData.startDate}
+                value={props.rowData.startDate.substring(0, 10)}
               />
             </Grid>
           </>
         );
       }
     },
-    { title: 'End Date', field: 'endDate' },
     { title: 'End Date',
       field: 'endDate',
       render: rowData => {
@@ -107,12 +105,13 @@ function TermsWithRedux() {
                 InputLabelProps={{
                   shrink: true,
                 }}
+                inputProps={{ min: props.rowData.startDate.substring(0, 10) }}
                 onChange={e =>
                   props.onRowDataChange({
                     ...props.rowData,
                     endDate: e.target.value
                   })}
-                value={props.rowData.endDate}
+                value={props.rowData.endDate.substring(0, 10)}
               />
             </Grid>
           </>

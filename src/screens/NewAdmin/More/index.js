@@ -71,9 +71,9 @@ function MoreWithRedux() {
               endDate={endDate} // momentPropTypes.momentObj or null,
               endDateId="logs-endDate" // PropTypes.string.isRequired,
               onDatesChange={(data) => {
-              onChange(data.startDate, 'startDate');
-              onChange(data.endDate, 'endDate');
-            }} // PropTypes.func.isRequired,
+                onChange(data.startDate, 'startDate');
+                onChange(data.endDate, 'endDate');
+              }} // PropTypes.func.isRequired,
               focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
               onFocusChange={onFocusChange}
             />
