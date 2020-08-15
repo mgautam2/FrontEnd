@@ -52,34 +52,30 @@ function TermsWithRedux() {
       field: 'startDate',
       render: rowData => {
         return (
-          <>
-            <Typography variant="body1">
-              {rowData.startDate}
-            </Typography>
-          </>
+          <Typography variant="body1">
+            {(rowData.startDate || '').substring(0, 10)}
+          </Typography>
         );
       },
       editComponent: props => {
         return (
-          <>
-            <Grid item xs={12} sm={12} md={12} lg={6}>
-              <TextField
-                id="startDate"
-                label="Start Date"
-                type="date"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                inputProps={{ max: props.rowData.endDate.substring(0, 10) }}
-                onChange={e =>
-                  props.onRowDataChange({
-                    ...props.rowData,
-                    startDate: e.target.value
-                  })}
-                value={props.rowData.startDate.substring(0, 10)}
-              />
-            </Grid>
-          </>
+          <Grid item xs={12} sm={12} md={12} lg={6}>
+            <TextField
+              id="admin-terms-startDate-input"
+              label="Start Date"
+              type="date"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{ max: (props.rowData.endDate || '').substring(0, 10) }}
+              onChange={e =>
+                props.onRowDataChange({
+                  ...props.rowData,
+                  startDate: new Date(e.target.value).toISOString()
+                })}
+              value={(props.rowData.startDate || '').substring(0, 10)}
+            />
+          </Grid>
         );
       }
     },
@@ -87,34 +83,30 @@ function TermsWithRedux() {
       field: 'endDate',
       render: rowData => {
         return (
-          <>
-            <Typography variant="body1">
-              {rowData.endDate}
-            </Typography>
-          </>
+          <Typography variant="body1">
+            {(rowData.endDate || '').substring(0, 10)}
+          </Typography>
         );
       },
       editComponent: props => {
         return (
-          <>
-            <Grid item xs={12} sm={12} md={12} lg={6}>
-              <TextField
-                id="endDate"
-                label="End Date"
-                type="date"
-                InputLabelProps={{
-                  shrink: true,
-                }}
-                inputProps={{ min: props.rowData.startDate.substring(0, 10) }}
-                onChange={e =>
-                  props.onRowDataChange({
-                    ...props.rowData,
-                    endDate: e.target.value
-                  })}
-                value={props.rowData.endDate.substring(0, 10)}
-              />
-            </Grid>
-          </>
+          <Grid item xs={12} sm={12} md={12} lg={6}>
+            <TextField
+              id="admin-terms-endDate-input"
+              label="End Date"
+              type="date"
+              InputLabelProps={{
+                shrink: true,
+              }}
+              inputProps={{ min: (props.rowData.startDate || '').substring(0, 10) }}
+              onChange={e =>
+                props.onRowDataChange({
+                  ...props.rowData,
+                  endDate: new Date(e.target.value).toISOString()
+                })}
+              value={(props.rowData.endDate || '').substring(0, 10)}
+            />
+          </Grid>
         );
       }
     },
@@ -122,11 +114,9 @@ function TermsWithRedux() {
       field: 'id',
       render: rowData => {
         return (
-          <>
-            <Typography variant="body1">
-              {currUniversity.name}
-            </Typography>
-          </>
+          <Typography variant="body1">
+            {currUniversity.name}
+          </Typography>
         );
       },
       editable: false

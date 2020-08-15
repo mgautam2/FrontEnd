@@ -53,11 +53,9 @@ function DepartmentsWithRedux() {
       field: 'id',
       render: rowData => {
         return (
-          <>
-            <Typography variant="body1">
-              {currUniversity.name}
-            </Typography>
-          </>
+          <Typography variant="body1">
+            {currUniversity.name}
+          </Typography>
         );
       },
       editable: false

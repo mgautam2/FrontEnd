@@ -76,32 +76,29 @@ function CoursesWithRedux() {
       field: 'courseNumber',
       render: rowData => {
         return (
-          <>
-            <Typography variant="body1">
-              {currDepartment.acronym}{rowData.courseNumber}
-            </Typography>
-          </>
+          <Typography variant="body1">
+            {currDepartment.acronym}{rowData.courseNumber}
+          </Typography>
         );
       },
       editComponent: props => {
         return (
-          <>
-            <Grid item xs={12} sm={12} md={12} lg={6}>
-              <TextField
-                id="courseNumber"
-                placeholder="Course Number"
-                InputProps={{
-                  startAdornment: <InputAdornment position="start">{currDepartment.acronym}</InputAdornment>,
-                }}
-                onChange={e =>
-                  props.onRowDataChange({
-                    ...props.rowData,
-                    courseNumber: e.target.value
-                  })}
-                value={props.rowData.courseNumber}
-              />
-            </Grid>
-          </>
+          <Grid item xs={12} sm={12} md={12} lg={6}>
+            <TextField
+              id="courseNumber"
+              placeholder="Course Number"
+              InputProps={{
+                'aria-label': 'Course Number',
+                startAdornment: <InputAdornment position="start">{currDepartment.acronym}</InputAdornment>,
+              }}
+              onChange={e =>
+                props.onRowDataChange({
+                  ...props.rowData,
+                  courseNumber: e.target.value
+                })}
+              value={props.rowData.courseNumber}
+            />
+          </Grid>
         );
       }
     },
@@ -109,11 +106,9 @@ function CoursesWithRedux() {
       field: 'id',
       render: rowData => {
         return (
-          <>
-            <Typography variant="body1">
-              {currDepartment.name}
-            </Typography>
-          </>
+          <Typography variant="body1">
+            {currDepartment.name}
+          </Typography>
         );
       },
       editable: false
@@ -122,11 +117,9 @@ function CoursesWithRedux() {
       field: 'id',
       render: rowData => {
         return (
-          <>
-            <Typography variant="body1">
-              {currUniversity.name}
-            </Typography>
-          </>
+          <Typography variant="body1">
+            {currUniversity.name}
+          </Typography>
         );
       },
       editable: false
