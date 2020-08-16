@@ -1,0 +1,750 @@
+[
+    {
+      "user": {
+        "id" : "aparekh5",
+        "email": "aparekh5@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 1,
+          "last3Days": 4,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 15
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 0,
+          "last3Days": 5,
+          "lastWeek": 10,
+          "lastMonth": 20,
+          "total": 35
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 0,
+          "lastMonth": 30,
+          "total": 30
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 10,
+          "last3Days": 5,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 25
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 0,
+          "lastMonth": 0,
+          "total": 0
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 9,
+          "last3Days": 10,
+          "lastWeek": 20,
+          "lastMonth": 0,
+          "total": 39
+        }
+      ]
+    },
+    {
+      "user": {
+        "id" : "knifnwn",
+        "email": "knifnwn@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 1,
+          "last3Days": 8,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 19
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 0,
+          "last3Days": 15,
+          "lastWeek": 10,
+          "lastMonth": 20,
+          "total": 45
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 10,
+          "lastMonth": 30,
+          "total": 40
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 15,
+          "last3Days": 15,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 40
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 10,
+          "lastMonth": 10,
+          "total": 20
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 9,
+          "last3Days": 0,
+          "lastWeek": 20,
+          "lastMonth": 30,
+          "total": 59
+        }
+      ]
+    },
+    
+    {
+      "user": {
+        "id" : "j3nf3f",
+        "email": "j3nf3f@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 11,
+          "last3Days": 8,
+          "lastWeek": 0,
+          "lastMonth": 0,
+          "total": 19
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 20,
+          "last3Days": 10,
+          "lastWeek": 20,
+          "lastMonth": 0,
+          "total": 50
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 10,
+          "lastMonth": 30,
+          "total": 40
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 0,
+          "lastMonth": 0,
+          "total": 0
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 10,
+          "lastMonth": 10,
+          "total": 20
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 19,
+          "last3Days": 0,
+          "lastWeek": 20,
+          "lastMonth": 30,
+          "total": 69
+        }
+      ]
+    },
+    {
+      "user": {
+        "id" : "qazsxfde1",
+        "email": "qazsxfde1@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 11,
+          "last3Days": 4,
+          "lastWeek": 0,
+          "lastMonth": 0,
+          "total": 15
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 0,
+          "last3Days": 15,
+          "lastWeek": 10,
+          "lastMonth": 20,
+          "total": 45
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 10,
+          "last3Days": 7,
+          "lastWeek": 3,
+          "lastMonth": 0,
+          "total": 20
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 0,
+          "last3Days": 5,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 15
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 10,
+          "lastMonth": 10,
+          "total": 20
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 19,
+          "last3Days": 20,
+          "lastWeek": 40,
+          "lastMonth": 10,
+          "total": 89
+        }
+      ]
+    },
+    {
+      "user": {
+        "id" : "crappy",
+        "email": "crappy@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 11,
+          "last3Days": 8,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 29
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 10,
+          "last3Days": 15,
+          "lastWeek": 0,
+          "lastMonth": 23,
+          "total": 48
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 10,
+          "last3Days": 7,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 27
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 5,
+          "last3Days": 5,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 20
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 1,
+          "last3Days": 1,
+          "lastWeek": 10,
+          "lastMonth": 10,
+          "total": 22
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 9,
+          "last3Days": 0,
+          "lastWeek": 23,
+          "lastMonth": 10,
+          "total": 42
+        }
+      ]
+    },
+    
+    {
+      "user": {
+        "id" : "yellow",
+        "email": "yellow@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 1,
+          "last3Days": 8,
+          "lastWeek": 0,
+          "lastMonth": 0,
+          "total": 9
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 50,
+          "last3Days": 10,
+          "lastWeek": 20,
+          "lastMonth": 0,
+          "total": 80
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 15,
+          "lastMonth": 25,
+          "total": 40
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 0,
+          "last3Days": 10,
+          "lastWeek": 20,
+          "lastMonth": 1,
+          "total": 31
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 15,
+          "lastMonth": 10,
+          "total": 25
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 19,
+          "last3Days": 0,
+          "lastWeek": 0,
+          "lastMonth": 30,
+          "total": 49
+        }
+      ]
+    },
+    {
+      "user": {
+        "id" : "blue",
+        "email": "blue@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 4,
+          "last3Days": 8,
+          "lastWeek": 11,
+          "lastMonth": 2,
+          "total": 25
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 3,
+          "last3Days": 6,
+          "lastWeek": 11,
+          "lastMonth": 18,
+          "total": 38
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 1,
+          "last3Days": 1,
+          "lastWeek": 0,
+          "lastMonth": 30,
+          "total": 32
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 1,
+          "last3Days": 5,
+          "lastWeek": 0,
+          "lastMonth": 0,
+          "total": 6
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 0,
+          "lastMonth": 0,
+          "total": 0
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 9,
+          "last3Days": 10,
+          "lastWeek": 2,
+          "lastMonth": 0,
+          "total": 21
+        }
+      ]
+    },
+    {
+      "user": {
+        "id" : "red",
+        "email": "red@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 3,
+          "last3Days": 8,
+          "lastWeek": 11,
+          "lastMonth": 0,
+          "total": 22
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 1,
+          "last3Days": 1,
+          "lastWeek": 1,
+          "lastMonth": 0,
+          "total": 3
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 5,
+          "last3Days": 5,
+          "lastWeek": 5,
+          "lastMonth": 5,
+          "total": 20
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 15,
+          "last3Days": 15,
+          "lastWeek": 1,
+          "lastMonth": 0,
+          "total": 31
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 0,
+          "last3Days": 10,
+          "lastWeek": 10,
+          "lastMonth": 10,
+          "total": 30
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 9,
+          "last3Days": 0,
+          "lastWeek": 21,
+          "lastMonth": 30,
+          "total": 60
+        }
+      ]
+    },
+    
+    {
+      "user": {
+        "id" : "orange",
+        "email": "orange@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 1,
+          "last3Days": 8,
+          "lastWeek": 0,
+          "lastMonth": 10,
+          "total": 19
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 10,
+          "last3Days": 10,
+          "lastWeek": 20,
+          "lastMonth": 0,
+          "total": 40
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 10,
+          "last3Days": 10,
+          "lastWeek": 10,
+          "lastMonth": 30,
+          "total": 60
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 7,
+          "last3Days": 3,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 20
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 10,
+          "last3Days": 10,
+          "lastWeek": 10,
+          "lastMonth": 10,
+          "total": 40
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 19,
+          "last3Days": 0,
+          "lastWeek": 20,
+          "lastMonth": 30,
+          "total": 69
+        }
+      ]
+    },
+    {
+      "user": {
+        "id" : "mango",
+        "email": "mango@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 1,
+          "last3Days": 4,
+          "lastWeek": 0,
+          "lastMonth": 0,
+          "total": 5
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 10,
+          "last3Days": 15,
+          "lastWeek": 12,
+          "lastMonth": 20,
+          "total": 57
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 1,
+          "last3Days": 7,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 18
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 10,
+          "last3Days": 5,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 25
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 10,
+          "last3Days": 10,
+          "lastWeek": 10,
+          "lastMonth": 10,
+          "total": 40
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 19,
+          "last3Days": 20,
+          "lastWeek": 0,
+          "lastMonth": 10,
+          "total": 49
+        }
+      ]
+    },
+    {
+      "user": {
+        "id" : "banana",
+        "email": "banana@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 1,
+          "last3Days": 1,
+          "lastWeek": 1,
+          "lastMonth": 1,
+          "total": 4
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 10,
+          "last3Days": 1,
+          "lastWeek": 0,
+          "lastMonth": 20,
+          "total": 31
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 10,
+          "last3Days": 7,
+          "lastWeek": 10,
+          "lastMonth": 3,
+          "total": 30
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 15,
+          "last3Days": 15,
+          "lastWeek": 10,
+          "lastMonth": 0,
+          "total": 40
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 10,
+          "last3Days": 0,
+          "lastWeek": 10,
+          "lastMonth": 10,
+          "total": 30
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 19,
+          "last3Days": 10,
+          "lastWeek": 20,
+          "lastMonth": 10,
+          "total": 59
+        }
+      ]
+    },
+    
+    {
+      "user": {
+        "id" : "apple",
+        "email": "apple@illinois.edu"
+      },
+      "medias": [
+        {
+          "mediaName": "Video 1",
+          "id": "qaz123",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 0,
+          "lastMonth": 1,
+          "total": 1
+        },
+        {
+          "mediaName": "Video 2",
+          "id": "qaz124",
+          "last1Hr": 5,
+          "last3Days": 1,
+          "lastWeek": 2,
+          "lastMonth": 1,
+          "total": 9
+        },
+        {
+          "mediaName": "Video 3",
+          "id": "qaz125",
+          "last1Hr": 10,
+          "last3Days": 10,
+          "lastWeek": 15,
+          "lastMonth": 25,
+          "total": 60
+        },
+        {
+          "mediaName": "Video 4",
+          "id": "qaz126",
+          "last1Hr": 10,
+          "last3Days": 0,
+          "lastWeek": 20,
+          "lastMonth": 1,
+          "total": 31
+        },
+        {
+          "mediaName": "Video 5",
+          "id": "qaz127",
+          "last1Hr": 0,
+          "last3Days": 0,
+          "lastWeek": 1,
+          "lastMonth": 10,
+          "total": 11
+        },
+        {
+          "mediaName": "Video 6",
+          "id": "qaz128",
+          "last1Hr": 19,
+          "last3Days": 0,
+          "lastWeek": 0,
+          "lastMonth": 30,
+          "total": 49
+        }
+      ]
+    }
+  ]
