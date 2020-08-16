@@ -3,17 +3,24 @@ import { withReduxProvider } from 'redux/redux-provider';
 import { CTLayout, CTFragment } from 'layout';
 import { courseStore, connectWithRedux, setup } from './controllers';
 import TempVideoTimeTable from './components/TempVideoTimeTable';
+import VideoTimeTable from './components/VideoTimeTable';
+import { VideoTimeDataParser, CourseLogKeywords, StudentLogKeywords} from './components/VideoTimeDataParser/index';
+
 
 export class CourseAnalyticsWithRedux extends Component {
   constructor(props) {
     super(props);
     this.offeringId = this.props.match.params.id;
-
+    this.dataParser = null;
     setup.init(props);
   }
 
   componentDidMount() {
     setup.setupCourseSettingsPage(this.offeringId);
+    if (this.offeringId) {
+      this.dataParser = new VideoTimeDataParser(this.offeringId);
+      this.dataParser.basicSetup();
+    }
   }
 
   render() {
@@ -37,7 +44,11 @@ export class CourseAnalyticsWithRedux extends Component {
     return (
       <CTLayout {...layoutProps}>
         <CTFragment padding={[20, 20]} loading={!offering}>
-          {offering && <TempVideoTimeTable offeringId={offering.id} />}
+          {(offering && this.dataParser ) && <VideoTimeTable
+            logsToDisplay={this.dataParser.sortedStudentLogsArray}
+            logsKeyword={StudentLogKeywords}
+            offeringId={offering.id}
+          />}
         </CTFragment>
       </CTLayout>
     );

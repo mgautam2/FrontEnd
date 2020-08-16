@@ -27,12 +27,9 @@ export class VideoTimeLogsHandler {
 
   async setup() {
     const recentTimeupdates = await this.getRecentTimeUpdateLogs();
-    // console.log('recentTimeupdates', recentTimeupdates)
     const editTransLogs = await this.getEditTransLogs();
     const totalTimeupdates = await this.getTotalTimeUpdateLogs();
-    // console.log('totalTimeupdates', totalTimeupdates)
     const logs = this.combineLogs(totalTimeupdates, recentTimeupdates, editTransLogs);
-
     this.logs = [...logs];
     this.setTotal(logs);
   }
