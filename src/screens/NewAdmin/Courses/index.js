@@ -88,7 +88,7 @@ function CoursesWithRedux() {
               id="admin-courses-courseNumber-input"
               placeholder="Course Number"
               InputProps={{
-                'aria-label': 'courseNumber-input',
+                // 'aria-label': 'courseNumber-input',
                 startAdornment: <InputAdornment position="start">{currDepartment.acronym}</InputAdornment>,
               }}
               onChange={e =>

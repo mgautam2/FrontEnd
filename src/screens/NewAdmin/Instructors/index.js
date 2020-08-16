@@ -46,6 +46,33 @@ function InstructorsWithRedux() {
   const universitiesOptions = universities.map((university) => 
   { return { value: university.id, text:university.name} });
 
+  const handleChangeName = (e, props, isFirstName) => {
+    return (
+      isFirstName 
+      ? props.onRowDataChange({
+        ...props.rowData,
+        firstName: e.target.value
+      })
+      : props.onRowDataChange({
+        ...props.rowData,
+        lastName: e.target.value
+      })
+    );
+  };
+
+  const editName = (props, isFirstName) => {
+    return (
+      <Grid item xs={12} sm={12} md={12} lg={6}>
+        <TextField
+          id={isFirstName ? "admin-instructors-firstName-input" : "admin-instructors-lastName-input"}
+          placeholder={isFirstName ? "First Name" : "Last Name"}
+          onChange={e => handleChangeName(e, props, isFirstName)}
+          value={isFirstName ? props.rowData.firstName : props.rowData && props.rowData.lastName}
+        />
+      </Grid>
+    );
+  };
+
   const instructorColumns = [
     { title: 'Name',
       field: 'id',
@@ -59,30 +86,8 @@ function InstructorsWithRedux() {
       editComponent: props => {
         return (
           <>
-            <Grid item xs={12} sm={12} md={12} lg={6}>
-              <TextField
-                id="admin-instructors-firstName-input"
-                placeholder="First Name"
-                onChange={e =>
-                  props.onRowDataChange({
-                    ...props.rowData,
-                    firstName: e.target.value
-                  })}
-                value={props.rowData.firstName}
-              />
-            </Grid>
-            <Grid item xs={12} sm={12} md={12} lg={6}>
-              <TextField
-                id="admin-instructors-lastName-input"
-                placeholder="Last Name"
-                onChange={e =>
-                  props.onRowDataChange({
-                    ...props.rowData,
-                    lastName: e.target.value
-                  })}
-                value={props.rowData && props.rowData.lastName}
-              />
-            </Grid>
+            {editName(props, true)}
+            {editName(props, false)}
           </>
         );
       }
@@ -101,7 +106,7 @@ function InstructorsWithRedux() {
     },
   ];
 
-  const handleChange = (value) => {
+  const handleChangeUniversity = (value) => {
     const temp = _.find(universities, ['id', value]);
     setCurrUniversity(temp);
   };
@@ -115,7 +120,7 @@ function InstructorsWithRedux() {
           label="Select University"
           options={universitiesOptions}
           value={currUniversity.id}
-          onChange={handleChange}
+          onChange={handleChangeUniversity}
         />
 
         {currUniversity.length === 0 ? (
