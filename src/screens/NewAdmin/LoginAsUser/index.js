@@ -26,7 +26,7 @@ function LoginAsUserWithRedux() {
       <CTFragment padding={[0, 50]}>
         {user.isLoginAsAccount ? (
           <CTForm
-            id="Login-As-User" 
+            id="admin-logInAsUser" 
             padding={[0, 30]}
             heading="Login As User"
             onSave={user.loginAsAccountSignOut}
@@ -39,7 +39,7 @@ function LoginAsUserWithRedux() {
           </CTForm>
         ) : (
           <CTForm
-            id="Login-As-User" 
+            id="admin-logInAsUser" 
             padding={[0, 30]}
             heading="Login As User"
             details="Input Your Email Address"
@@ -49,7 +49,7 @@ function LoginAsUserWithRedux() {
           >     
             <CTInput
               required
-              id="email-address"
+              id="admin-logInAsUser-emailAddress-input"
               label="Email"
               placeholder="Email Address"
               value={emailAddress}

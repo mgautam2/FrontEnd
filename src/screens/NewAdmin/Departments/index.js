@@ -51,7 +51,7 @@ function DepartmentsWithRedux() {
     { title: 'Acronym', field: 'acronym' },
     { title: 'University', 
       field: 'id',
-      render: rowData => {
+      render: () => {
         return (
           <Typography variant="body1">
             {currUniversity.name}

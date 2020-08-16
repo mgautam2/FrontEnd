@@ -85,10 +85,10 @@ function CoursesWithRedux() {
         return (
           <Grid item xs={12} sm={12} md={12} lg={6}>
             <TextField
-              id="courseNumber"
+              id="admin-courses-courseNumber-input"
               placeholder="Course Number"
               InputProps={{
-                'aria-label': 'Course Number',
+                'aria-label': 'courseNumber-input',
                 startAdornment: <InputAdornment position="start">{currDepartment.acronym}</InputAdornment>,
               }}
               onChange={e =>
@@ -104,7 +104,7 @@ function CoursesWithRedux() {
     },
     { title: 'Department', 
       field: 'id',
-      render: rowData => {
+      render: () => {
         return (
           <Typography variant="body1">
             {currDepartment.name}
@@ -115,7 +115,7 @@ function CoursesWithRedux() {
     },
     { title: 'University', 
       field: 'id',
-      render: rowData => {
+      render: () => {
         return (
           <Typography variant="body1">
             {currUniversity.name}

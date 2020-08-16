@@ -61,7 +61,7 @@ function InstructorsWithRedux() {
           <>
             <Grid item xs={12} sm={12} md={12} lg={6}>
               <TextField
-                id="firstName"
+                id="admin-instructors-firstName-input"
                 placeholder="First Name"
                 onChange={e =>
                   props.onRowDataChange({
@@ -73,7 +73,7 @@ function InstructorsWithRedux() {
             </Grid>
             <Grid item xs={12} sm={12} md={12} lg={6}>
               <TextField
-                id="lastName"
+                id="admin-instructors-lastName-input"
                 placeholder="Last Name"
                 onChange={e =>
                   props.onRowDataChange({
@@ -90,7 +90,7 @@ function InstructorsWithRedux() {
     { title: 'Email', field: 'email' },
     { title: 'University', 
       field: 'id',
-      render: rowData => {
+      render: () => {
         return (
           <Typography variant="body1">
             {currUniversity.name}

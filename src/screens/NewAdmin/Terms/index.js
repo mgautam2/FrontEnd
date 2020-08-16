@@ -27,7 +27,7 @@ function TermsWithRedux() {
        */
       api.contentLoaded();
     });
-  }
+  };
 
   const getTermsByUniId = (uniId) => {
     api.getTermsByUniId(uniId).then((response_) => {
@@ -41,78 +41,78 @@ function TermsWithRedux() {
 
   useEffect(() => {
     getTermsByUniId(currUniversity.id);
-  },[currUniversity.id])
+  },[currUniversity.id]);
 
   const universitiesOptions = universities.map((university) => 
   { return { value: university.id, text:university.name} });
+
+  const renderDate = (value) => {
+    return (
+      <Typography variant="body1">
+        {(value || '').substring(0, 10)}
+      </Typography>
+    );
+  };
+
+  const handleChangeDate = (e, props, isStart) => {
+    return (
+      isStart 
+      ? props.onRowDataChange({
+          ...props.rowData,
+          startDate: new Date(e.target.value).toISOString()
+      })
+      : props.onRowDataChange({
+          ...props.rowData,
+          endDate: new Date(e.target.value).toISOString()
+      })
+    );
+  };
+
+  const editDate = (props, isStart) => {
+    return (
+      <Grid item xs={12} sm={12} md={12} lg={6}>
+        <TextField
+          id={isStart ? "admin-terms-startDate-input" : "admin-terms-endDate-input"}
+          label={isStart ? "Start Date" : "End Date"}
+          type="date"
+          InputLabelProps={{
+            shrink: true,
+          }}
+          inputProps={isStart
+            ? { max: (props.rowData.endDate || '').substring(0, 10) } 
+            : { min: (props.rowData.startDate || '').substring(0, 10) }}
+          onChange={e => handleChangeDate(e, props, isStart)}
+          value={isStart
+          ? (props.rowData.startDate || '').substring(0, 10)
+          : (props.rowData.endDate || '').substring(0, 10)}
+        />
+      </Grid>
+    );
+  };
 
   const termColumns = [
     { title: 'Name', field: 'name' },
     { title: 'Start Date',
       field: 'startDate',
       render: rowData => {
-        return (
-          <Typography variant="body1">
-            {(rowData.startDate || '').substring(0, 10)}
-          </Typography>
-        );
+        return renderDate(rowData.startDate);
       },
       editComponent: props => {
-        return (
-          <Grid item xs={12} sm={12} md={12} lg={6}>
-            <TextField
-              id="admin-terms-startDate-input"
-              label="Start Date"
-              type="date"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              inputProps={{ max: (props.rowData.endDate || '').substring(0, 10) }}
-              onChange={e =>
-                props.onRowDataChange({
-                  ...props.rowData,
-                  startDate: new Date(e.target.value).toISOString()
-                })}
-              value={(props.rowData.startDate || '').substring(0, 10)}
-            />
-          </Grid>
-        );
+        return editDate(props, true);
       }
     },
     { title: 'End Date',
       field: 'endDate',
       render: rowData => {
-        return (
-          <Typography variant="body1">
-            {(rowData.endDate || '').substring(0, 10)}
-          </Typography>
-        );
+        return renderDate(rowData.endDate);
       },
       editComponent: props => {
-        return (
-          <Grid item xs={12} sm={12} md={12} lg={6}>
-            <TextField
-              id="admin-terms-endDate-input"
-              label="End Date"
-              type="date"
-              InputLabelProps={{
-                shrink: true,
-              }}
-              inputProps={{ min: (props.rowData.startDate || '').substring(0, 10) }}
-              onChange={e =>
-                props.onRowDataChange({
-                  ...props.rowData,
-                  endDate: new Date(e.target.value).toISOString()
-                })}
-              value={(props.rowData.endDate || '').substring(0, 10)}
-            />
-          </Grid>
-        );
+        return editDate(props, false);
       }
     },
     { title: 'University', 
       field: 'id',
-      render: rowData => {
+      render: () => {
         return (
           <Typography variant="body1">
             {currUniversity.name}
@@ -123,7 +123,7 @@ function TermsWithRedux() {
     },
   ];
 
-  const handleChange = (value) => {
+  const handleChangeUniversity = (value) => {
     const temp = _.find(universities, ['id', value]);
     setCurrUniversity(temp);
   };
@@ -138,7 +138,7 @@ function TermsWithRedux() {
           label="Select University"
           options={universitiesOptions}
           value={currUniversity.id}
-          onChange={handleChange}
+          onChange={handleChangeUniversity}
         />
 
         {currUniversity.length === 0 ? (
