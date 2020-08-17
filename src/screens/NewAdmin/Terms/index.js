@@ -59,11 +59,11 @@ function TermsWithRedux() {
       isStart 
       ? props.onRowDataChange({
           ...props.rowData,
-          startDate: new Date(e.target.value).toISOString()
+          startDate: (e.target.value !== '' ? new Date(e.target.value).toISOString() : undefined)
       })
       : props.onRowDataChange({
           ...props.rowData,
-          endDate: new Date(e.target.value).toISOString()
+          endDate: (e.target.value !== '' ? new Date(e.target.value).toISOString() : undefined)
       })
     );
   };
@@ -72,6 +72,7 @@ function TermsWithRedux() {
     return (
       <Grid item xs={12} sm={12} md={12} lg={6}>
         <TextField
+          required
           id={isStart ? "admin-terms-startDate-input" : "admin-terms-endDate-input"}
           label={isStart ? "Start Date" : "End Date"}
           type="date"
@@ -91,9 +92,13 @@ function TermsWithRedux() {
   };
 
   const termColumns = [
-    { title: 'Name', field: 'name' },
+    { title: 'Name',
+      field: 'name',
+      validate: rowData => (rowData.name !== undefined && rowData.name !== '')
+    },
     { title: 'Start Date',
       field: 'startDate',
+      validate: rowData => rowData.startDate !== undefined,
       render: rowData => {
         return renderDate(rowData.startDate);
       },
@@ -103,6 +108,7 @@ function TermsWithRedux() {
     },
     { title: 'End Date',
       field: 'endDate',
+      validate: rowData => rowData.endDate !== undefined,
       render: rowData => {
         return renderDate(rowData.endDate);
       },
