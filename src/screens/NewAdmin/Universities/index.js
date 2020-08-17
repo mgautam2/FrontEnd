@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { CTFragment, CTHeading } from 'layout';
 import { api } from 'utils';
 import { connectWithRedux } from '../controllers';
-import GeneralTable from '../Components/GeneralTable';
+import GeneralTable from '../components/GeneralTable';
 
 function UniversitiesWithRedux() {
   const headingProps = CTHeading.createProps({
@@ -50,6 +50,6 @@ function UniversitiesWithRedux() {
 }
 
 export const Universities = connectWithRedux(
-    UniversitiesWithRedux,
-    []
+  UniversitiesWithRedux,
+  []
 );

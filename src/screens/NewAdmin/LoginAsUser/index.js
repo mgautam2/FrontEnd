@@ -64,6 +64,6 @@ function LoginAsUserWithRedux() {
 }
 
 export const LoginAsUser = connectWithRedux(
-    LoginAsUserWithRedux,
-    []
+  LoginAsUserWithRedux,
+  []
 );

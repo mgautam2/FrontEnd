@@ -85,6 +85,6 @@ function MoreWithRedux() {
 }
 
 export const More = connectWithRedux(
-    MoreWithRedux,
-    []
+  MoreWithRedux,
+  []
 );

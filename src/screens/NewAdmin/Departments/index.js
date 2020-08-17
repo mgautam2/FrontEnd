@@ -3,7 +3,7 @@ import { CTFragment, CTHeading, CTAutoComplete, CTFormHelp, CTText } from 'layou
 import { api } from 'utils';
 import _ from 'lodash';
 import { Typography } from "@material-ui/core";
-import GeneralTable from '../Components/GeneralTable';
+import GeneralTable from '../components/GeneralTable';
 import { connectWithRedux } from '../controllers';
 import './index.scss';
 
@@ -108,6 +108,6 @@ function DepartmentsWithRedux() {
 }
 
 export const Departments = connectWithRedux(
-    DepartmentsWithRedux,
-    []
+  DepartmentsWithRedux,
+  []
 );

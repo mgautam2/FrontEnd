@@ -4,7 +4,7 @@ import { Typography, TextField, Grid } from "@material-ui/core";
 import { CTFragment, CTHeading, CTAutoComplete, CTFormHelp } from 'layout';
 import { api } from 'utils';
 import { connectWithRedux } from '../controllers';
-import GeneralTable from '../Components/GeneralTable';
+import GeneralTable from '../components/GeneralTable';
 import './index.scss';
 
 function TermsWithRedux() {

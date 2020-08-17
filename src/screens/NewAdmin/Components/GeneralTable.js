@@ -1,5 +1,5 @@
-import React from 'react';
-import MaterialTable from 'material-table';
+import React from 'screens/NewAdmin/components/node_modules/react';
+import MaterialTable from 'screens/NewAdmin/components/node_modules/material-table';
 
 function GeneralTable(props) {
   const {value, setValue, columnNames} = props;
