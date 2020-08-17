@@ -1,7 +1,7 @@
-import React from 'screens/NewAdmin/components/node_modules/react';
-import cx from 'screens/NewAdmin/components/node_modules/classnames';
-import { makeStyles } from 'screens/NewAdmin/components/node_modules/@material-ui/core/styles';
-import Button from 'screens/NewAdmin/components/node_modules/@material-ui/core/Button';
+import React from 'react';
+import cx from 'classnames';
+import { makeStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 
 export const useStyles = makeStyles({
   button: {
