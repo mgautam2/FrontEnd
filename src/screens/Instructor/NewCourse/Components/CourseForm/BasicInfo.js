@@ -5,7 +5,7 @@ import {
   CTFormRow,
   CTInput,
   CTSelect,
-  CTCheckbox,
+  CTRadio,
 } from 'layout';
 import { api, util, prompt } from 'utils';
 
@@ -47,8 +47,8 @@ function BasicInfo(props) {
     setTerm(value);
   };
 
-  const handleLogEventsFlagChange = ({ target: { checked } }) => {
-    setLogEventsFlag(checked);
+  const handleLogEventsFlagChange = (event, value) => {
+    setLogEventsFlag(value === 'yes');
   };
 
   const handleDescriptionChange = ({ target: { value } }) => {
@@ -62,7 +62,11 @@ function BasicInfo(props) {
   const setupTermOptions = async () => {
     try {
       const { data } = await api.getTermsByUniId(uniId);
-      setTerms(util.getSelectOptions(data, 'term'));
+      const _terms = util.getSelectOptions(data, 'term');
+      if (_terms[0]) {
+        _terms[0].description = 'Current term';
+      }
+      setTerms(_terms);
 
       if (data.length > 0) {
         if (!term) setTerm(data[0].id);
@@ -77,11 +81,16 @@ function BasicInfo(props) {
     setupTermOptions();
   }, [uniId]);
 
-  const visibilityOptions = api.offeringAccessType.map(type => ({
+  const visibilityOptions = api.offeringAccessType.slice(1).map(type => ({
     text: type.name,
     value: type.id,
     description: type.description
   }));
+
+  const logEventOptions = [
+    { value: 'yes', text: 'Yes' },
+    { value: 'no', text: 'No' }
+  ];
 
   return (
     <CTFragment>
@@ -143,12 +152,13 @@ function BasicInfo(props) {
       </CTFormRow>
 
       <CTFormRow padding={[0, 10]}>
-        <CTCheckbox
+        <CTRadio
           id="log-event"
-          helpText="Turn it on if you would like to receive the statistics of students' perfermance in the future."
-          label="Log student events"
-          checked={logEventsFlag}
+          legend="Do you want to receive the statistics of students' performance in the future?"
+          options={logEventOptions}
           onChange={handleLogEventsFlagChange}
+          value={logEventsFlag ? 'yes' : 'no'}
+          helpText="By choosing yes, we are going log students' performance for your course."
         />
       </CTFormRow>
     </CTFragment>

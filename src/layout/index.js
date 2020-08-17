@@ -30,4 +30,8 @@ export { CTDNDContext, CTDNDItem, CTDNDList } from './CTDnd';
 
 export { CTModal, CTConfirmation } from './CTModal';
 
+export { useButtonStyles, CTFileButton } from './CTButtons';
+
+export { default as CTHorizontalScroll } from './CTHorizontalScroll';
+
 export * from './tools';

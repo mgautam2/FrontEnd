@@ -7,6 +7,7 @@ import CTNavHeader from '../CTNavHeader';
 import CTNavSidebar from '../CTNavSidebar';
 import CTHeading from '../CTHeading';
 import CTFooter from '../CTFooter';
+import CTMetaTags from '../CTMetaTags';
 import NavSidebarTrigger from './NavSidebarTrigger';
 import './index.scss';
 
@@ -38,6 +39,7 @@ function CTLayout(props) {
     headerProps = {},
     sidebarProps = {},
     headingProps,
+    metaTagsProps = {}
   } = props;
 
   const { float = false, mini = false } = sidebarProps;
@@ -95,6 +97,7 @@ function CTLayout(props) {
   // Brand Element
   const brandElemProps = {
     darkMode,
+    linkDisabled: !isNormal,
     showSidebar: isOpen,
     onSidebarTriggerClick: handleOpenSidebar,
   };
@@ -102,6 +105,7 @@ function CTLayout(props) {
 
   brandElemProps.withTrigger = !isMini;
   brandElemProps.logo = logoBrand;
+  brandElemProps.linkDisabled = false;
   const headerBrandElem = altEl(NavSidebarTrigger, !isNormal, brandElemProps, <div />);
 
   const headingElement = altEl(CTHeading, Boolean(headingProps), {
@@ -118,6 +122,8 @@ function CTLayout(props) {
 
   return (
     <div id="ct-layout-container" className={containerClasses}>
+      <CTMetaTags {...metaTagsProps} />
+      
       <CTNavSidebar
         {...sidebarProps}
         darkMode={darkMode}
@@ -190,7 +196,10 @@ export const CTLayoutPropTypes = {
   sidebarProps: PropTypes.shape(CTNavSidebar.propTypes),
 
   /** Props to the heading */
-  headingProps: PropTypes.shape(CTHeading.propTypes)
+  headingProps: PropTypes.shape(CTHeading.propTypes),
+
+  /** Meta tags */
+  metaTagsProps: PropTypes.shape(CTMetaTags.propTypes)
 };
 
 CTLayout.propTypes = CTLayoutPropTypes;

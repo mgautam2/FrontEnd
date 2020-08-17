@@ -19,6 +19,7 @@ function CTFragment(props) {
     hEnd = false,
     hBetween = false,
     list = false,
+    dark = false,
     fade = false,
     sticky = false,
     offsetTop = 0,
@@ -33,6 +34,8 @@ function CTFragment(props) {
     errorElement,
     loading = false,
     loadingElement,
+    alt,
+    altElement,
     // content
     as = 'div',
     children,
@@ -58,7 +61,7 @@ function CTFragment(props) {
     ...styles
   };
 
-  const fragmentClassses = classNames(
+  const fragmentClasses = classNames(
     'ct-fragment',
     className,
     { 
@@ -70,6 +73,7 @@ function CTFragment(props) {
       hBetween,
       list,
       sticky,
+      dark,
       'ct-a-fade-in': fade,
       'border-top': borderTop,
       'border-right': borderRight,
@@ -81,7 +85,7 @@ function CTFragment(props) {
   const fragmentProps = {
     id,
     role,
-    className: fragmentClassses,
+    className: fragmentClasses,
     style: fragmentStyles,
     children,
     ...otherProps
@@ -92,7 +96,9 @@ function CTFragment(props) {
     error,
     errorElement,
     loading,
-    loadingElement
+    loadingElement,
+    alt,
+    altElement,
   };
 
   return (
@@ -139,6 +145,9 @@ CTFragment.propTypes = {
 
   /** The fragment can be a flex list */
   list: PropTypes.bool,
+
+  /** The fragment supports dark mode */
+  dark: PropTypes.bool,
 
   /** The fragment can fade in */
   fade: PropTypes.bool,
@@ -193,7 +202,7 @@ CTFragment.propTypes = {
    * <CTFragment as="a" ... >...</CTFragment> // <a ... >...</a>
    * <CTFragment as="ul" ... >...</CTFragment> // <ul ... >...</ul>
    */
-  as: PropTypes.string,
+  as: PropTypes.elementType,
 
   /** The primary content */
   children: PropTypes.node,

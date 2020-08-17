@@ -5,8 +5,6 @@ import * as loggerToExport from './logger';
 export { env } from './env';
 export { api } from './cthttp';
 export { user } from './user';
-export { userAction } from './useraction';
-export { CTEpubGenerator } from './epub-gen';
 export { CTSearch, search } from './search';
 export { CTPrompt, prompt } from './prompt';
 export { CTPreference } from './user-preference';
@@ -17,6 +15,7 @@ export { uurl } from './use-url';
 export { uemail } from './use-email';
 export { links } from './links';
 export { default as timestr } from './use-time';
+export { default as CTError } from './use-error';
 
 export * from './constants';
 export const logger = loggerToExport;
