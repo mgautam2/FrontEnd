@@ -76,6 +76,8 @@ function InstructorsWithRedux() {
   const instructorColumns = [
     { title: 'Name',
       field: 'id',
+      validate: rowData => (rowData.firstName !== undefined && rowData.firstName !== null && rowData.firstName !== '' 
+      && rowData.lastName !== undefined && rowData.lastName !== null && rowData.lastName !== ''),
       render: rowData => {
         return (
           <Typography variant="body1">
@@ -92,7 +94,10 @@ function InstructorsWithRedux() {
         );
       }
     },
-    { title: 'Email', field: 'email' },
+    { title: 'Email',
+      field: 'email',
+      validate: rowData => (rowData.email !== undefined && rowData.email !== '')
+    },
     { title: 'University', 
       field: 'id',
       render: () => {

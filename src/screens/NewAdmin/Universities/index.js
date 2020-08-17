@@ -29,8 +29,14 @@ function UniversitiesWithRedux() {
   },[]);
 
   const univColumns = [
-    { title: 'Name', field: 'name' },
-    { title: 'Domain', field: 'domain' },
+    { title: 'Name',
+      field: 'name',
+      validate: rowData => (rowData.name !== undefined && rowData.name !== '')
+    },
+    { title: 'Domain',
+      field: 'domain',
+      validate: rowData => (rowData.domain !== undefined && rowData.domain !== '')
+    },
   ];
 
   return (

@@ -74,6 +74,7 @@ function CoursesWithRedux() {
   const courseColumns = [
     { title: 'Course Number',
       field: 'courseNumber',
+      validate: rowData => (rowData.courseNumber !== undefined && rowData.courseNumber !== ''),
       render: rowData => {
         return (
           <Typography variant="body1">
