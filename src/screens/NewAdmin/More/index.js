@@ -54,7 +54,7 @@ function MoreWithRedux() {
       <CTHeading {...headingProps} />
       <CTFragment padding={[0, 50]}>
         <CTForm
-          id="download-logs" 
+          id="admin-more-downloadLogs" 
           padding={[0, 30]}
           heading="Download Logs"
           details="Select Date Range"
@@ -67,13 +67,13 @@ function MoreWithRedux() {
               noBorder
               isOutsideRange={() => false}
               startDate={startDate} // momentPropTypes.momentObj or null,
-              startDateId="logs-startDate" // PropTypes.string.isRequired,
+              startDateId="admin-more-logs-startDate" // PropTypes.string.isRequired,
               endDate={endDate} // momentPropTypes.momentObj or null,
-              endDateId="logs-endDate" // PropTypes.string.isRequired,
+              endDateId="admin-more-logs-endDate" // PropTypes.string.isRequired,
               onDatesChange={(data) => {
-              onChange(data.startDate, 'startDate');
-              onChange(data.endDate, 'endDate');
-            }} // PropTypes.func.isRequired,
+                onChange(data.startDate, 'startDate');
+                onChange(data.endDate, 'endDate');
+              }} // PropTypes.func.isRequired,
               focusedInput={focusedInput} // PropTypes.oneOf([START_DATE, END_DATE]) or null,
               onFocusChange={onFocusChange}
             />

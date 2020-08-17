@@ -47,17 +47,21 @@ function DepartmentsWithRedux() {
   { return { value: university.id, text:university.name} });
 
   const departmentColumns = [
-    { title: 'Name', field: 'name' },
-    { title: 'Acronym', field: 'acronym' },
+    { title: 'Name',
+      field: 'name',
+      validate: rowData => (rowData.name !== undefined && rowData.name !== '')
+    },
+    { title: 'Acronym',
+      field: 'acronym',
+      validate: rowData => (rowData.acronym !== undefined && rowData.acronym !== '')
+    },
     { title: 'University', 
       field: 'id',
-      render: rowData => {
+      render: () => {
         return (
-          <>
-            <Typography variant="body1">
-              {currUniversity.name}
-            </Typography>
-          </>
+          <Typography variant="body1">
+            {currUniversity.name}
+          </Typography>
         );
       },
       editable: false
