@@ -8,7 +8,7 @@ export const CourseLogKeywords = {
     'prettierlast3Days' : 'Last 3 Days',
     'prettierlastWeek' : 'Last Week',
     'prettierlastMonth' : 'Last Month',
-    'prettierTotal' : 'Total'
+    'prettierTotal' : 'Total',
 };
 
 export const StudentLogKeywords = {
@@ -22,7 +22,7 @@ export const StudentLogKeywords = {
     'prettierTotal' : 'Total'
 };
 
-export const prettierKeywordsMapped = {
+export const prettierToNormalKeywordsMapped = {
     'Video Name': 'mediaName',
     'Student Email' :  'email',
     'Last 1 Hour': 'last1Hr',
@@ -93,6 +93,10 @@ export const VideoTimeDataParser = class {
         return logsToSort; 
     }
 
+    static deepCopyLogsArray(logsToCopy) {
+        return _.cloneDeep(logsToCopy);
+    }
+
     sortStudentLogs(keyword, descending) {
         let multiplier = 1;
         if (descending) {
@@ -133,14 +137,18 @@ export const VideoTimeDataParser = class {
         });
 
         Object.values(this.combinedStudentLogsObject).forEach((student) => {
-            student.last1Hr = (student.last1Hr * this.REQUEST_SENT_TIME) % this.SECS_IN_A_MINUTE;
-            student.last3Days = (student.last3Days * this.REQUEST_SENT_TIME) %
-             this.SECS_IN_A_MINUTE;
-            student.lastWeek = (student.lastWeek * this.REQUEST_SENT_TIME) % this.SECS_IN_A_MINUTE;
-            student.lastMonth = (student.lastMonth * this.REQUEST_SENT_TIME) %
-             this.SECS_IN_A_MINUTE;
-            student.total = (student.total * this.REQUEST_SENT_TIME) % this.SECS_IN_A_MINUTE;
+            student.last1Hr = Math.round((student.last1Hr * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
+            student.last3Days = Math.round((student.last3Days * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
+            student.lastWeek = Math.round((student.lastWeek * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
+            student.lastMonth = Math.round((student.lastMonth * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
+            student.total = Math.round((student.total * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
         });
+
 
         this.sortedStudentLogsArray = [];
         let keys = Object.keys(this.combinedStudentLogsObject);
@@ -174,19 +182,25 @@ export const VideoTimeDataParser = class {
         }); 
 
         Object.values(this.combinedCourseLogsObject).forEach((course) => {
-            course.last1Hr = (course.last1Hr * this.REQUEST_SENT_TIME) % this.SECS_IN_A_MINUTE;
-            course.last3Days = (course.last3Days * this.REQUEST_SENT_TIME) % this.SECS_IN_A_MINUTE;
-            course.lastWeek = (course.lastWeek * this.REQUEST_SENT_TIME) % this.SECS_IN_A_MINUTE;
-            course.lastMonth = (course.lastMonth * this.REQUEST_SENT_TIME) % this.SECS_IN_A_MINUTE;
-            course.total = (course.total * this.REQUEST_SENT_TIME) % this.SECS_IN_A_MINUTE;
+            course.last1Hr = Math.round((course.last1Hr * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
+            course.last3Days = Math.round((course.last3Days * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
+            course.lastWeek = Math.round((course.lastWeek * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
+            course.lastMonth = Math.round((course.lastMonth * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
+            course.total = Math.round((course.total * this.REQUEST_SENT_TIME) /
+              this.SECS_IN_A_MINUTE);
         });
 
         this.sortedCourseLogsArray = [];
         let keys = Object.keys(this.combinedCourseLogsObject);
         for (let i = 0; i < keys.length;) {
-            this.sortedCourseLogsArray.push(this.sortedCourseLogsArray[keys[i]]);
+            this.sortedCourseLogsArray.push(this.combinedCourseLogsObject[keys[i]]);
             i += 1;
         }
+
 
         this.sortCourseLogs('total', true);
     }

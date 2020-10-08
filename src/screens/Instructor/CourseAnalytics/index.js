@@ -12,6 +12,11 @@ export class CourseAnalyticsWithRedux extends Component {
     super(props);
     this.offeringId = this.props.match.params.id;
     this.dataParser = null;
+    this.state = {
+      studentSortedLogs:[],
+      courseSortedLogs:[]
+
+    }
     setup.init(props);
   }
 
@@ -20,8 +25,16 @@ export class CourseAnalyticsWithRedux extends Component {
     if (this.offeringId) {
       this.dataParser = new VideoTimeDataParser(this.offeringId);
       this.dataParser.basicSetup();
+      let newStudentLogs = 
+        VideoTimeDataParser.deepCopyLogsArray(this.dataParser.sortedStudentLogsArray);
+      let newCourseLogs = 
+        VideoTimeDataParser.deepCopyLogsArray(this.dataParser.sortedCourseLogsArray);
+      
+      this.setState({studentSortedLogs : newStudentLogs});
+      this.setState({courseSortedLogs : newCourseLogs});
     }
   }
+
 
   render() {
     const { offering } = this.props;
@@ -45,9 +58,16 @@ export class CourseAnalyticsWithRedux extends Component {
       <CTLayout {...layoutProps}>
         <CTFragment padding={[20, 20]} loading={!offering}>
           {(offering && this.dataParser ) && <VideoTimeTable
-            logsToDisplay={this.dataParser.sortedStudentLogsArray}
+            logsToDisplay={this.state.studentSortedLogs}
             logsKeyword={StudentLogKeywords}
             offeringId={offering.id}
+            tabName='Viewer Statstics'
+          />}
+          {(offering && this.dataParser ) && <VideoTimeTable
+            logsToDisplay={this.state.courseSortedLogs}
+            logsKeyword={CourseLogKeywords}
+            offeringId={offering.id}
+            tabName='Course Statstics'
           />}
         </CTFragment>
       </CTLayout>
