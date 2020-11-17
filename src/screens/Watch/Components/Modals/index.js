@@ -6,7 +6,10 @@ import {
   MODAL_SHARE,
   MODAL_BEFORE_HIDE,
 } from '../../Utils';
+
+import { handleCookies } from '../../../../utils/handle-cookies';
 import EmbedModal from './EmbedModal'
+import IntroModal from './IntroModal'
 import ShareModal from './ShareModal';
 import './index.css';
 
@@ -21,6 +24,9 @@ function ModalsWithRedux({ modal = MODAL_HIDE, setModal }) {
   };
 
   const [embed, setEmbed] = useState(false);
+  const [intro, setIntro] = useState(handleCookies.getCookie("visited") !== "yes");
+  //handleCookies.checkCookie()
+
 
   const hideBefore = modal === MODAL_BEFORE_HIDE;
 
@@ -35,7 +41,16 @@ function ModalsWithRedux({ modal = MODAL_HIDE, setModal }) {
         embed
         &&
         <EmbedModal onClose={() => setEmbed(false)} />
+        
       }
+
+      {
+        intro
+        &&
+        <IntroModal onClose={() => {setIntro(false); handleCookies.setCookie("visited", "yes", 365);}} /> 
+        
+      }
+       
     </>
   );
 }
