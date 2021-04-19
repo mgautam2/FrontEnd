@@ -93,6 +93,7 @@
     "semantic-ui-react": "^0.87.3",
     "showdown": "^1.9.1",
     "showdown-katex": "^0.8.0",
+    "socket.io-client": "^4.0.1",
     "uuid": "^7.0.2",
     "winston": "^3.3.3"
   },

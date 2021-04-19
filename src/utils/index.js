@@ -21,6 +21,7 @@ export { uemail } from './use-email';
 export { links } from './links';
 export { default as timestr } from './use-time';
 export { default as CTError, InvalidDataError } from './use-error';
+export { default as socketManager } from "./socker";
 
 export * from './constants';
 
